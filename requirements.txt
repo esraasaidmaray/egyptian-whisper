@@ -1,0 +1,6 @@
+transformers
+peft
+librosa
+soundfile
+safetensors
+accelerate

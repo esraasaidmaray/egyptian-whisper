@@ -1,0 +1,12 @@
+FROM pytorch/pytorch:2.2.0-cuda12.1-cudnn8-runtime
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt \
+    && pip install --no-cache-dir fastapi uvicorn[standard] python-multipart
+
+COPY . /app
+EXPOSE 8000
+CMD ["uvicorn", "app_fastapi:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+venv/*
+.env
+
+# Jupyter
+.ipynb_checkpoints
+
+# Virtualenv
+/.venv
+
+# Pip cache & temp
+/pip_tmp
+~/.cache/pip
+
+# Hugging Face cache and large model files
+.cache/huggingface/
+*.safetensors
+*.pt
+*.ckpt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+
+# local audio/test files
+my_voice.wav
+test.wav
